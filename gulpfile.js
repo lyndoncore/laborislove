@@ -14,6 +14,12 @@ gulp.task('gzip-html', function() {
     .pipe(gulp.dest('build'));
 });
 
+gulp.task('gzip-blog', function() {
+    gulp.src('blog/*.html')
+    .pipe(gzip({ append: false }))
+    .pipe(gulp.dest('build/blog'));
+});
+
 // =================================================== Styles (CSS) tasks
 gulp.task('autoprefix', function() {
     gulp.src('css/main.css')
@@ -34,6 +40,7 @@ gulp.task('gzip-styles', function() {
     .pipe(gzip())
     .pipe(gulp.dest('build/css'));
 });
+
 
 // RUN ALL CSS TASKS
 
